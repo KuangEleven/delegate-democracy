@@ -1,0 +1,15 @@
+<h1>Welcome back {{ user.username }}!</h1>
+<h2>Select voting body</h2>
+{% if voting_body_list %}
+    <ul>
+        {% for voting_body in voting_body_list %}
+            <li><a href="/delegate_democracy/voting_body/{{ voting_body.id }}">{{ voting_body.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No voting bodies available. Start a new one!</p>
+{% endif %}
+<form action="", method="post">
+    {% csrf_token %}
+    <input type="text" name="voting_body_name"><input type="submit">
+</form>

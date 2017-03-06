@@ -90,3 +90,5 @@ ENV/
 
 # PyCharm project settings
 .idea
+
+voting/db.sqlite3
